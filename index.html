@@ -31,7 +31,10 @@
         <div class="timers-container">
             <!-- Timer 1 -->
             <div class="timer-section">
-                <h2>🚗 Car 1</h2>
+                <div class="car-name-input">
+                    <input type="text" id="car1Name" placeholder="Enter Car 1 Name" maxlength="20" value="Car 1">
+                </div>
+                <h2 id="car1Title">🚗 <span class="car-name-display">Car 1</span></h2>
                 <div class="timer-display" id="timer1Display">00:00.000</div>
                 <div class="timer-controls">
                     <button class="btn btn-start" data-timer="1">Start</button>
@@ -47,7 +50,10 @@
 
             <!-- Timer 2 -->
             <div class="timer-section">
-                <h2>🏎️ Car 2</h2>
+                <div class="car-name-input">
+                    <input type="text" id="car2Name" placeholder="Enter Car 2 Name" maxlength="20" value="Car 2">
+                </div>
+                <h2 id="car2Title">🏎️ <span class="car-name-display">Car 2</span></h2>
                 <div class="timer-display" id="timer2Display">00:00.000</div>
                 <div class="timer-controls">
                     <button class="btn btn-start" data-timer="2">Start</button>

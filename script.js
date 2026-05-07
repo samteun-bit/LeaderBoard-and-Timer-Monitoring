@@ -121,9 +121,11 @@ function displayLap(timerId, lapNumber, lapTime) {
 let leaderboard = [];
 
 function addToLeaderboard(carId, totalTime, laps) {
+    const carName = document.getElementById(`car${carId}Name`).value || `Car ${carId}`;
+
     const entry = {
         carId: carId,
-        carName: `Car ${carId}`,
+        carName: carName,
         totalTime: totalTime,
         laps: laps,
         timestamp: Date.now()
@@ -243,6 +245,17 @@ function updateLapCountDisplay() {
 document.addEventListener('DOMContentLoaded', () => {
     // Load saved leaderboard
     loadLeaderboard();
+
+    // Car name change listeners
+    document.getElementById('car1Name').addEventListener('input', (e) => {
+        const name = e.target.value || 'Car 1';
+        document.querySelector('#car1Title .car-name-display').textContent = name;
+    });
+
+    document.getElementById('car2Name').addEventListener('input', (e) => {
+        const name = e.target.value || 'Car 2';
+        document.querySelector('#car2Title .car-name-display').textContent = name;
+    });
 
     // Lap count change
     document.getElementById('lapCount').addEventListener('change', updateLapCountDisplay);

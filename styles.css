@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #000000;
     min-height: 100vh;
     padding: 20px;
     color: #333;
@@ -160,10 +160,29 @@ body {
     text-align: center;
 }
 
+.car-name-input {
+    margin-bottom: 15px;
+}
+
+.car-name-input input {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    border: 2px solid #667eea;
+    border-radius: 8px;
+    font-size: 1.1em;
+    text-align: center;
+    font-weight: 600;
+}
+
 .timer-section h2 {
     color: #667eea;
     margin-bottom: 20px;
     font-size: 2em;
+}
+
+.car-name-display {
+    color: #667eea;
 }
 
 .timer-display {
