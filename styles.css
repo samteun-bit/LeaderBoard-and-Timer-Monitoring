@@ -273,7 +273,7 @@ body {
 
 .leaderboard-header {
     display: grid;
-    grid-template-columns: 80px 1fr 200px 100px;
+    grid-template-columns: 80px 1fr 200px 180px;
     gap: 15px;
     padding: 15px;
     background: #667eea;
@@ -296,14 +296,13 @@ body {
 
 .leaderboard-item {
     display: grid;
-    grid-template-columns: 80px 1fr 200px 100px;
+    grid-template-columns: 80px 1fr 200px 180px;
     gap: 15px;
     padding: 15px;
     background: #f7fafc;
     border-radius: 8px;
     margin-bottom: 10px;
     align-items: center;
-    cursor: pointer;
     transition: all 0.3s ease;
 }
 
@@ -343,6 +342,11 @@ body {
     color: #2d3748;
 }
 
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
 .details-btn {
     background: #667eea;
     color: white;
@@ -351,10 +355,26 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 0.9em;
+    flex: 1;
 }
 
 .details-btn:hover {
     background: #5568d3;
+}
+
+.delete-btn {
+    background: #f56565;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    flex: 1;
+}
+
+.delete-btn:hover {
+    background: #e53e3e;
 }
 
 .lap-details {

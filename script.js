@@ -155,7 +155,10 @@ function displayLeaderboard() {
             <div class="rank">#${index + 1}</div>
             <div class="car-name">${entry.carName}</div>
             <div class="total-time">${formatTime(entry.totalTime)}</div>
-            <button class="details-btn" onclick="toggleDetails(this, ${index})">Details</button>
+            <div class="actions">
+                <button class="details-btn" onclick="toggleDetails(this, ${index})">Details</button>
+                <button class="delete-btn" onclick="deleteEntry(${index})">Delete</button>
+            </div>
         `;
         list.appendChild(item);
     });
@@ -199,6 +202,14 @@ function toggleDetails(button, index) {
     const lapItems = details.querySelectorAll('.lap-detail-item');
     if (lapItems[fastestLapIndex]) {
         lapItems[fastestLapIndex].classList.add('fastest');
+    }
+}
+
+function deleteEntry(index) {
+    if (confirm('Delete this record from the leaderboard?')) {
+        leaderboard.splice(index, 1);
+        saveLeaderboard();
+        displayLeaderboard();
     }
 }
 
