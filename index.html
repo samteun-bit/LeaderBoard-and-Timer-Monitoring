@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racing Lap Timer & Leaderboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <h1>🏁 Racing Lap Timer</h1>
+            <div class="settings">
+                <label>
+                    Number of Laps:
+                    <input type="number" id="lapCount" min="1" max="20" value="3">
+                </label>
+                <button id="startBoth" class="btn btn-primary">Start Both (Space)</button>
+                <button id="resetAll" class="btn btn-secondary">Reset All (R)</button>
+            </div>
+            <div class="keyboard-guide">
+                <span><kbd>1</kbd> Timer 1 Lap</span>
+                <span><kbd>2</kbd> Timer 2 Lap</span>
+                <span><kbd>Space</kbd> Start Both</span>
+                <span><kbd>R</kbd> Reset</span>
+            </div>
+        </div>
+
+        <!-- Dual Timer Section -->
+        <div class="timers-container">
+            <!-- Timer 1 -->
+            <div class="timer-section">
+                <h2>🚗 Car 1</h2>
+                <div class="timer-display" id="timer1Display">00:00.000</div>
+                <div class="timer-controls">
+                    <button class="btn btn-start" data-timer="1">Start</button>
+                    <button class="btn btn-lap" data-timer="1">Lap (1)</button>
+                    <button class="btn btn-reset" data-timer="1">Reset</button>
+                </div>
+                <div class="lap-info">
+                    <div class="current-lap">Lap: <span id="timer1Lap">0</span>/<span class="total-laps">3</span></div>
+                    <div class="lap-status" id="timer1Status">Ready</div>
+                </div>
+                <div class="laps-list" id="timer1Laps"></div>
+            </div>
+
+            <!-- Timer 2 -->
+            <div class="timer-section">
+                <h2>🏎️ Car 2</h2>
+                <div class="timer-display" id="timer2Display">00:00.000</div>
+                <div class="timer-controls">
+                    <button class="btn btn-start" data-timer="2">Start</button>
+                    <button class="btn btn-lap" data-timer="2">Lap (2)</button>
+                    <button class="btn btn-reset" data-timer="2">Reset</button>
+                </div>
+                <div class="lap-info">
+                    <div class="current-lap">Lap: <span id="timer2Lap">0</span>/<span class="total-laps">3</span></div>
+                    <div class="lap-status" id="timer2Status">Ready</div>
+                </div>
+                <div class="laps-list" id="timer2Laps"></div>
+            </div>
+        </div>
+
+        <!-- Leaderboard Section -->
+        <div class="leaderboard">
+            <h2>🏆 Leaderboard</h2>
+            <div class="leaderboard-header">
+                <span>Rank</span>
+                <span>Car</span>
+                <span>Total Time</span>
+                <span>Details</span>
+            </div>
+            <div id="leaderboardList" class="leaderboard-list">
+                <div class="no-records">No completed races yet</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
